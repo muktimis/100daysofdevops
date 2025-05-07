@@ -1,0 +1,48 @@
+2025-05-06 17:50:54,607 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-06 17:50:54,626 [33mPress CTRL+C to quit[0m
+2025-05-06 18:15:47,855 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-06 18:15:47,868 [33mPress CTRL+C to quit[0m
+2025-05-06 18:35:35,025 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-06 18:35:35,032 [33mPress CTRL+C to quit[0m
+2025-05-06 19:01:30,598 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2025-05-06 19:01:30,644 [33mPress CTRL+C to quit[0m
+2025-05-06 19:02:01,655 Homepage accessed
+2025-05-06 19:02:02,051 192.168.65.1 - - [06/May/2025 19:02:02] "GET / HTTP/1.1" 200 -
+2025-05-06 19:02:03,090 192.168.65.1 - - [06/May/2025 19:02:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-06 19:05:35,769 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2025-05-06 19:05:35,891 [33mPress CTRL+C to quit[0m
+2025-05-06 19:08:08,816 Homepage accessed
+2025-05-06 19:08:08,928 192.168.65.1 - - [06/May/2025 19:08:08] "GET / HTTP/1.1" 200 -
+2025-05-06 19:19:31,478 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2025-05-06 19:19:31,558 [33mPress CTRL+C to quit[0m
+2025-05-06 19:20:08,840 Homepage accessed
+2025-05-06 19:20:09,012 192.168.65.1 - - [06/May/2025 19:20:09] "GET / HTTP/1.1" 200 -
+2025-05-06 19:39:09,673 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2025-05-06 19:39:09,852 [33mPress CTRL+C to quit[0m
+2025-05-06 19:42:14,213 Homepage accessed
+2025-05-06 19:42:14,548 192.168.65.1 - - [06/May/2025 19:42:14] "GET / HTTP/1.1" 200 -
+2025-05-07 00:46:41,252 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.2:5000
+2025-05-07 00:46:41,267 [33mPress CTRL+C to quit[0m
+2025-05-07 00:55:53,278 Homepage accessed
+2025-05-07 00:55:53,467 192.168.65.1 - - [07/May/2025 00:55:53] "GET / HTTP/1.1" 200 -
+2025-05-07 00:55:53,747 192.168.65.1 - - [07/May/2025 00:55:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-07 00:56:48,095 Homepage accessed
+2025-05-07 00:56:48,098 192.168.65.1 - - [07/May/2025 00:56:48] "GET / HTTP/1.1" 200 -
