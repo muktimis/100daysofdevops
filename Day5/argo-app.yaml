@@ -1,0 +1,19 @@
+# argo-app.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: log-analyzer
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/muktimis/log-analyzer
+    targetRevision: HEAD
+    path: k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
