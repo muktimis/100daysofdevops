@@ -1,4 +1,4 @@
-name: Flask CI/CD with Code Scan
+name: Day 12 Flask CI/CD with Code Scan and Kubernetes
 
 on:
   push:
@@ -7,26 +7,59 @@ on:
     branches: [ main ]
 
 jobs:
-  build-test-scan:
+  ci-cd-code-scan-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      # Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      # Set up Python
+      - name: Set up Python 3.10
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
+      # Install dependencies
+      - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      - name: Run tests
+      # Run tests
+      - name: Run Unit Tests
         run: pytest -v
 
-      - name: Lint with pylint
+      # Lint code
+      - name: Lint Code with pylint
         run: pylint app.py
 
-      - name: Security scan with bandit
+      # Security scan
+      - name: Security Scan with bandit
         run: bandit -r .
+
+      # Log in to Docker Hub
+      - name: Docker Login
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # Build Docker image
+      - name: Build Docker Image
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/flask-demo:latest .
+
+      # Push Docker image
+      - name: Push Docker Image
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/flask-demo:latest
+
+      # Set up kubectl
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'v1.30.0'
+
+      # Deploy to Kubernetes
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f k8s/deployment.yaml
+          kubectl apply -f k8s/service.yaml
