@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: canary-rollout
+spec:
+  replicas: 5
+  strategy:
+    canary:
+      stableService: canary-stable
+      canaryService: canary-preview
+      steps:
+        - setWeight: 10
+        - pause:
+            duration: 30s
+        - setWeight: 30
+        - pause:
+            duration: 60s
+        - setWeight: 60
+        - pause:
+            duration: 120s
+  selector:
+    matchLabels:
+      app: canary
+  template:
+    metadata:
+      labels:
+        app: canary
+        version: v2
+    spec:
+      containers:
+        - name: app
+          image: mukti/canary:v2
+          ports:
+            - containerPort: 5000
