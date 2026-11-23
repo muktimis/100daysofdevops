@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: bluegreen-app
+spec: 
+  replicas: 3
+  selector: 
+    matchLabels:
+      app: bluegreen
+  template:
+    metadata:
+      labels:
+        apps: bluegreen
+        version: v1
+    spec:
+      containers:
+        - name: app
+          image: mukti/bluegreen/v1
+          ports:
+            - containerPort: 5000

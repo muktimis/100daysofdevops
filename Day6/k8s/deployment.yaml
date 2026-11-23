@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: log-analyzer
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: log-analyzer
+            image: your-dockerhub-username/log-analyzer:latest
+            env:
+            - name: LOG_PATH
+              value: /mnt/logs/auth.log
+            volumeMounts:
+            - name: log-volume
+              mountPath: /mnt/logs
+          restartPolicy: OnFailure
+          volumes:
+          - name: log-volume
+            hostPath:
+              path: /var/log
+              type: Directory

@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: bg-rollout
+spec: 
+  replicas: 3
+  strategy:
+    bluegreen:
+      activeService: bg-active
+      previewService: bg-preview
+      autopromotionEnabled: false
+    selector:
+      matchlabels:
+        app: bluegreen 
+    template:
+      metdata:
+        labels:
+          app: bluegreen
+      spec:
+        containers:
+          - name: app
+            image: mukti/bluegreen:v2
+            ports: 
+              - containerPort: 5000

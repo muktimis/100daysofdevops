@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rolling-app
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1          # extra pod during update
+      maxUnavailable: 1    # one pod can go down at a time
+  selector:
+    matchLabels:
+      app: rolling
+  template:
+    metadata:
+      labels:
+        app: rolling
+        version: v2
+    spec:
+      containers:
+        - name: app
+          image: mukti/bluegreen:v2
+          ports:
+            - containerPort: 5000

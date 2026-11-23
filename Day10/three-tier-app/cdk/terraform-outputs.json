@@ -1,0 +1,77 @@
+{
+  "internet_gateway_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "igw-04757c20418ef62e0"
+  },
+  "nat_gateway_ids": {
+    "sensitive": false,
+    "type": [
+      "tuple",
+      [
+        "string",
+        "string",
+        "string"
+      ]
+    ],
+    "value": [
+      "nat-0a604dcbcb4cf0a73",
+      "nat-0f78cb75cd2557b12",
+      "nat-0ab509dac3bbda257"
+    ]
+  },
+  "nat_gateway_ips": {
+    "sensitive": false,
+    "type": [
+      "list",
+      "string"
+    ],
+    "value": [
+      "54.72.85.158",
+      "52.30.63.18",
+      "52.18.124.201"
+    ]
+  },
+  "private_subnet_ids": {
+    "sensitive": false,
+    "type": [
+      "tuple",
+      [
+        "string",
+        "string",
+        "string"
+      ]
+    ],
+    "value": [
+      "subnet-021b2ed6f4de290de",
+      "subnet-079267ac592762dd3",
+      "subnet-0bc3438573132a1de"
+    ]
+  },
+  "public_subnet_ids": {
+    "sensitive": false,
+    "type": [
+      "tuple",
+      [
+        "string",
+        "string",
+        "string"
+      ]
+    ],
+    "value": [
+      "subnet-049030f446189d56f",
+      "subnet-0beadca19ba07e312",
+      "subnet-05548cf3f6320b827"
+    ]
+  },
+  "rds_subnet_group_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "rds-subnet-group"
+  },
+  "vpc_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vpc-0b4e09447bfcf30d1"
+  }
+}
