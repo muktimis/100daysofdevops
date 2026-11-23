@@ -1,0 +1,21 @@
+replicaCount: 2
+
+image:
+  repository: nginxinc/nginx-unprivileged
+  tag: ""
+  pullPolicy: IfNotPresent
+
+service:
+  port: 80
+
+config:
+  logLevel: info
+
+migration:
+  fail: false
+
+global:
+  environment: dev
+
+cache:
+  enabled: true

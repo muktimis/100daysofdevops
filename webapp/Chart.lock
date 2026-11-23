@@ -1,0 +1,6 @@
+dependencies:
+- name: cache
+  repository: file://../cache
+  version: 0.1.0
+digest: sha256:312fc891131ba8fc7340ed212a7b979a957ed7c9601b3b622b2a4c730a4547f4
+generated: "2026-11-04T20:32:05.764562-05:00"

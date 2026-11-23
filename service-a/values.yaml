@@ -1,0 +1,7 @@
+image:
+  repository: hashicorp/http-echo
+service:
+  port: 80
+args:
+  - "-listen=:8080"
+  - "-text=hello from service-a"
